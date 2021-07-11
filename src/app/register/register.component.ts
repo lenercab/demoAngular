@@ -9,7 +9,7 @@ import {PersonaService} from '../servicio/persona.service';
 })
 export class RegisterComponent implements OnInit {
 
-  Input persona : {
+  persona: {
         firstName: '',
         lastName: '',
         identification: '',
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
                 status: 1,
                 username: ''
             }
-        ]
+        ],
       };
 
   constructor(private personaService: PersonaService, private route: ActivatedRoute, private router: Router) { }
