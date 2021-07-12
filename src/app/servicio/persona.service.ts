@@ -23,7 +23,7 @@ private extractData(res: Response) {
   return body || { };
 }
 
-const httpOptions = {
+httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
   })
@@ -58,8 +58,8 @@ getPersonByIdentification(identification): Observable<any>{
   }
 
   updatePersona (persona): Observable<any> {
-    return this.httpClient.post("http://localhost:8079/producer/persona", JSON.stringify(persona), httpOptions).pipe(
-      tap(_ => console.log(`updated persona id=${id}`)),
+    return this.httpClient.post("http://localhost:8079/producer/persona", JSON.stringify(persona), this.httpOptions).pipe(
+      tap(_ => console.log(`updated persona`)),
       catchError(this.handleError<any>('updatePersona'))
     );
   }
